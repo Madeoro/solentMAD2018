@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <RelativeLayout android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/btn1" android:text="@string/convertBtn"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv2"
+        android:textSize="12pt"
+        android:text="@string/feet"
+        android:layout_alignParentLeft="true"/>
+
+
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:inputType="numberDecimal"
+            android:layout_toLeftOf="@id/btn1"
+            android:layout_toRightOf="@id/tv2"
+            android:textSize="12pt"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv1"
+        android:layout_toRightOf="@id/tv3"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv3"
+            android:text="@string/result"
+            android:layout_alignParentLeft="true"
+            android:textSize="12pt"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+
+

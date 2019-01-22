@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FeetToMetersActivity</string>
+    <string name="convertBtn">Convert!</string>
+    <string name="hello">Hello!</string>
+    <string name="feet">Feet</string>
+    <string name="result"> In meters is:  </string>
+</resources>
