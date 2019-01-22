@@ -45,6 +45,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv1"
         android:layout_toRightOf="@id/tv3"
+        android:textSize="12pt"/>
         />
 
         <TextView
@@ -57,6 +58,7 @@
 
 
     </RelativeLayout>
+
 
 </LinearLayout>
 

@@ -28,6 +28,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         EditText et = (EditText)findViewById(R.id.et1);
         double feet = Double.parseDouble(et.getText().toString());
         double metres = feet*0.305;
-        tvvv.setText(String.valueOf(metres));
+        tv.setText(String.valueOf(metres));
     }
 }
