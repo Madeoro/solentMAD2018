@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected  void onActivityResult (int requestCode, int resultCode, Intent intent){
 
-        if (requestCode ==0 ){
+        if (requestCode == 0 ){
 
             if(resultCode == RESULT_OK){
                 Bundle extras=intent.getExtras();
@@ -133,6 +133,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
+        else if (requestCode == 1 ){
+
+            if (resultCode == RESULT_OK){
+                Bundle extras = intent.getExtras();
+                double lati = extras.getDouble("lati");
+                double longi = extras.getDouble("longi");
+                 mv.getController().setCenter(new GeoPoint(lati,longi));
+            }
+        }
+
 
     }
 

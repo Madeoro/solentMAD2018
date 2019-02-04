@@ -30,9 +30,9 @@ public class SetLocation extends AppCompatActivity implements View.OnClickListen
         Bundle bundle = new Bundle();
 
 
-        TextView tv = findViewById(R.id.etgo);
-        TextView tvv = findViewById(R.id.tvgo);
-        EditText et = findViewById(R.id.etgo1);
+       // TextView tv = findViewById(R.id.etgo);
+       // TextView tvv = findViewById(R.id.tvgo);
+        EditText et = findViewById(R.id.etgo);
         EditText et1 = findViewById(R.id.etgo1);
 
 
@@ -60,14 +60,16 @@ public class SetLocation extends AppCompatActivity implements View.OnClickListen
 
                 AlertDialog dialog = builder.create();
                 dialog.show();
-            } else
+            }
+            else
                 {
                 lati = Double.parseDouble(value);
 
                 longi = Double.parseDouble(value2);
 
             }
-
+            bundle.putDouble("lati", lati);
+            bundle.putDouble("longi",longi);
             intent.putExtras(bundle);
             setResult(RESULT_OK,intent);
             finish();
