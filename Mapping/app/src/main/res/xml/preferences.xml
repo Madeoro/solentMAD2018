@@ -25,10 +25,4 @@
         android:entries="@array/mapChoice"
         android:entryValues="@array/mapChoiceCodes" />
 
-    <CheckBoxPreference
-        android:key="autodownload"
-        android:defaultValue="true"
-        android:title="Auto-download"
-        android:summary="Auto-download data about surrounding cinemas?" />
-
 </PreferenceScreen>
