@@ -25,14 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MapChooseActivity"
-            android:label="@string/selectmap">
-
-        </activity>
-        <activity android:name=".SetLocation"
-            android:label="Set Location">
-
-        </activity>
+        <activity android:name=".MapChooseActivity" android:label="@string/selectmap"> </activity>
+        <activity android:name=".SetLocation" android:label="Set Location"> </activity>
+        <activity android:name=".MyPreferenceActivity" android:label="Preferences"></activity>
     </application>
 
 </manifest>

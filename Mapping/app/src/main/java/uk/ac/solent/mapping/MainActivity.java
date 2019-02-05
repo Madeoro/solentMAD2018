@@ -1,6 +1,7 @@
 package uk.ac.solent.mapping;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import org.osmdroid.views.MapView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     MapView mv;
+    boolean readMapTypeFromPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mv.setBuiltInZoomControls(true);
         mv.getController().setZoom(16);
-       // mv.getController().setCenter(new GeoPoint(51.05,-0.72));
+       mv.getController().setCenter(new GeoPoint(51.05,-0.72));
 
         Button b = findViewById(R.id.btn1);
         b.setOnClickListener(this);
-
+        readMapTypeFromPreferences = true;
         mv.setClickable(true);
     }
     public void onClick(View view)
@@ -113,6 +115,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivityIfNeeded(intent, 1);
             return true;
         }
+
+        else if (item.getItemId()==R.id.preference)
+        {
+            Intent intent = new Intent(this, MyPreferenceActivity.class);
+            startActivityIfNeeded(intent,2);
+            return true;
+        }
         return false;
     }
 
@@ -131,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     mv.setTileSource(TileSourceFactory.MAPNIK);
                 }
+                readMapTypeFromPreferences = false;
             }
         }
         else if (requestCode == 1 ){
@@ -146,4 +156,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-}
+    public void onStart()
+    {
+        super.onStart();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        double lat = Double.parseDouble ( prefs.getString("lat", "35.70") );
+        double lon = Double.parseDouble ( prefs.getString("lon", "139.73") );
+        int zom = Integer.parseInt(prefs.getString("zom","10"));
+       // boolean autodownload = prefs.getBoolean("autodownload", true);
+        mv.getController().setZoom(zom);
+        mv.getController().setCenter(new GeoPoint(lat,lon));
+
+        String chooseMap = prefs.getString("chooseMap", "NONE");
+
+
+        if(readMapTypeFromPreferences == true) {
+
+
+            if(chooseMap.equals("HM"))
+            {
+                mv.setTileSource(TileSourceFactory.HIKEBIKEMAP);
+            }
+            else
+            {
+                mv.setTileSource(TileSourceFactory.MAPNIK);
+            }
+        }
+        readMapTypeFromPreferences = true;
+
+    }
+
+    }
+
+
+

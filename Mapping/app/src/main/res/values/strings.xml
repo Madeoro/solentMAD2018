@@ -5,4 +5,5 @@
     <string name="hikeview">Hike View</string>
     <string name="selectmap">Select Map</string>
     <string name="setlocation">Set Location</string>
+    <string name="preference">Preferences</string>
 </resources>

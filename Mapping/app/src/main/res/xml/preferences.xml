@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="lat"
+        android:defaultValue="50.9"
+        android:title="Latitude"
+        android:summary="Latitude to show the map at initially." />
+
+    <EditTextPreference
+        android:key="lon"
+        android:defaultValue="-1.4"
+        android:title="Longitude"
+        android:summary="Longitude to show the map at initially." />
+
+    <EditTextPreference
+        android:key="zom"
+        android:defaultValue="8"
+        android:title="Zoom"
+        android:summary="Zoom showed at the beginning"
+        />
+    <ListPreference
+        android:key="chooseMap"
+        android:title="Map choice"
+        android:summary="Choose your type of Map"
+        android:entries="@array/mapChoice"
+        android:entryValues="@array/mapChoiceCodes" />
+
+    <CheckBoxPreference
+        android:key="autodownload"
+        android:defaultValue="true"
+        android:title="Auto-download"
+        android:summary="Auto-download data about surrounding cinemas?" />
+
+</PreferenceScreen>

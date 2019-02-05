@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mapChoice">
+        <item>Regular View</item>
+        <item>Hiker Map</item>
+    </string-array>
+
+    <string-array name="mapChoiceCodes">
+        <item>NM</item>
+        <item>HM</item>
+    </string-array>
+
+</resources>
