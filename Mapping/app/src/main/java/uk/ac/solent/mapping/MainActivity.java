@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mv.setBuiltInZoomControls(true);
         mv.getController().setZoom(16);
-       mv.getController().setCenter(new GeoPoint(51.05,-0.72));
+        mv.getController().setCenter(new GeoPoint(51.05,-0.72));
 
         Button b = findViewById(R.id.btn1);
         b.setOnClickListener(this);
@@ -156,9 +156,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void onStart()
+    public void onResume()
     {
-        super.onStart();
+        super.onResume();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         double lat = Double.parseDouble ( prefs.getString("lat", "35.70") );
         double lon = Double.parseDouble ( prefs.getString("lon", "139.73") );
